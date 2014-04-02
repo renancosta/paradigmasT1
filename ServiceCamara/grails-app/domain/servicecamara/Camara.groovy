@@ -21,4 +21,8 @@ class Camara {
    	String toString(){
     	"${id} - ${nomeParlamentarAtual}"
   	}
+  	/* Este parâmetro torna true o acesso do método searchable aos 
+  	atributos da classe de domínio persistidos no banco de dados.*/
+	static searchable = true
+
 }

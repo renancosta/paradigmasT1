@@ -6,7 +6,22 @@ class CamaraController {
 
     def camaraService = new Camara()
 
-    def save = {
+    static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+
+    def index() {
+        redirect(action: "list", params: params)
+    }
+
+    def list(Integer max) {
+        params.max = Math.min(max ?: 10, 100)
+        [camaraInstanceList: Camara.list(params), camaraInstanceTotal: Camara.count()]
+    }
+
+    def create() {
+        [camaraInstance: new Camara(params)]
+    }
+
+    def save() {
         def results = camaraService.camaraDeputado(params.id,params.numLegislatura)    
         def camara = new Camara(params + results)
         if(!camara.hasErrors() && camara.save()) {
@@ -18,12 +33,15 @@ class CamaraController {
         }
     }
 
-    /*def buscaDeputados = {
-        def resultado = Camara.withCriteria {
-            eq(params.nomeParlamentarAtual)
+    def search= {
+        def query =params.q
+        if(query){
+            def srchResults = Camara.search('*'+query+'*')
+            render(view:"list",model:[camaraInstanceList:srchResults.results,camaraInstanceTotal:srchResults.total])}
+        else{
+            redirect(action:"list")
         }
-        [resultado:resultado]
-    }*/
+    }
 
     def scaffold = camaraService
 

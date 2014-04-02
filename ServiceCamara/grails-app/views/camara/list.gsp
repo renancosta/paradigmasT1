@@ -13,6 +13,12 @@
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+				<!–Adicionando um botão, com uma action search, que fará um get retornandoos atributos de classe de domínio cadastrados.–>
+				<li><span class="menuButton">
+					<g:form action="search" method="get" style="display: inline;">
+					<g:textField name="q" value="${params.q}"/>
+					<g:submitButton name="Buscar"/>
+				</g:form></li>
 			</ul>
 		</div>
 		<div id="list-camara" class="content scaffold-list" role="main">
