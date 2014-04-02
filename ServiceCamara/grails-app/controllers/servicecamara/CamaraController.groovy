@@ -9,7 +9,35 @@ class CamaraController {
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
     def index() {
+        //def results = camaraService.camaraDeputados()
+        /*def temp = [:]
+        
+        temp = results
+        def camara = [:]
+        def i=0
+        printf(results[i].nomeCivil)
+
+        while(i<results.size()){
+        camara[i] = new Camara(params + results[i])
+        if(!camara[i].hasErrors() && camara[i].save()) {
+            flash.message = "Camara ${camara[i].id} created"
+        }
+        else {
+            render(view:'create',model:[camara:camara])
+        }
+        i++
+        }*/
+
+        /*camara = new Camara(params + results)
+        if(!camara.hasErrors() && camara.save()) {
+            flash.message = "Camara ${camara.id} created"
+        }
+        else {
+            render(view:'create',model:[camara:camara])
+        }*/
+
         redirect(action: "list", params: params)
+        
     }
 
     def list(Integer max) {
@@ -21,7 +49,7 @@ class CamaraController {
         [camaraInstance: new Camara(params)]
     }
 
-    def save() {
+    /*def save() {
         def results = camaraService.camaraDeputado(params.id,params.numLegislatura)    
         def camara = new Camara(params + results)
         if(!camara.hasErrors() && camara.save()) {
@@ -31,7 +59,7 @@ class CamaraController {
         else {
             render(view:'create',model:[camara:camara])
         }
-    }
+    }*/
 
     def search= {
         def query =params.q
