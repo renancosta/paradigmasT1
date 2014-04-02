@@ -53,6 +53,10 @@ grails.spring.bean.packages = []
 // whether to disable processing of multi part requests
 grails.web.disable.multipart=false
 
+
+//added because the simple-twitter sample
+grails.plugin.springsecurity.logout.postOnly = false
+
 // request parameters to mask when logging exceptions
 grails.exceptionresolver.params.exclude = ['password']
 
@@ -88,4 +92,22 @@ log4j = {
            'org.springframework',
            'org.hibernate',
            'net.sf.ehcache.hibernate'
+
+    debug 'SpringSecurityTwitterGrailsPlugin'
 }
+
+
+// Added by the Spring Security Core plugin:
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'seguranca.Person'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'seguranca.PersonAuthority'
+grails.plugin.springsecurity.authority.className = 'seguranca.Authority'
+grails.plugin.springsecurity.controllerAnnotations.staticRules = [
+	'/':                              ['permitAll'],
+	'/index':                         ['permitAll'],
+	'/index.gsp':                     ['permitAll'],
+	'/**/js/**':                      ['permitAll'],
+	'/**/css/**':                     ['permitAll'],
+	'/**/images/**':                  ['permitAll'],
+	'/**/favicon.ico':                ['permitAll']
+]
+
