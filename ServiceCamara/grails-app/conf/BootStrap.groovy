@@ -1,4 +1,3 @@
-
 import seguranca.*
 import servicecamara.*
 
@@ -41,14 +40,23 @@ class BootStrap {
         	def allDeputados = deputados.deputado
 
         	while(i<allDeputados.size()) {
-        		camara.numLegislatura = deputados.deputado[i].matricula as String 
-        		camara.nomeProfissao = deputados.deputado[i].matricula as String
-        		camara.dataNascimento = deputados.deputado[i].matricula as String
+        		camara.numLegislatura = "" 
+                camara.ide = deputados.deputado[i].ideCadastro as String
+        		camara.nomeProfissao =  ""
+        		camara.dataNascimento = ""
         		camara.nomeParlamentarAtual = deputados.deputado[i].nomeParlamentar as String
         		camara.nomeCivil = deputados.deputado[i].nome as String
-        	
-        		result = new Camara(camara)
-
+        	    camara.partido = deputados.deputado[i].partido as String
+                camara.ufRepresentacaoAtual = deputados.deputado[i].uf as String
+                camara.condicao = deputados.deputado[i].condicao as String
+                camara.matricula = deputados.deputado[i].matricula as String
+                camara.urlFoto = deputados.deputado[i].urlFoto as String
+                camara.email = deputados.deputado[i].email as String
+                camara.fone = deputados.deputado[i].fone as String
+        		
+                result = new Camara(camara)
+                printf(result.nomeParlamentarAtual)
+                
         		if(!result.hasErrors() && result.save()) {
         		}
         		i++

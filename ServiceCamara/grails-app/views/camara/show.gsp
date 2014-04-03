@@ -32,6 +32,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${camaraInstance?.ide}">
+				<li class="fieldcontain">
+					<span id="ide-label" class="property-label"><g:message code="camara.ide.label" default="Ide" /></span>
+					
+						<span class="property-value" aria-labelledby="ide-label"><g:fieldValue bean="${camaraInstance}" field="ide"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${camaraInstance?.numLegislatura}">
 				<li class="fieldcontain">
 					<span id="numLegislatura-label" class="property-label"><g:message code="camara.numLegislatura.label" default="Num Legislatura" /></span>
@@ -64,6 +73,69 @@
 					<span id="nomeProfissao-label" class="property-label"><g:message code="camara.nomeProfissao.label" default="Nome Profissao" /></span>
 					
 						<span class="property-value" aria-labelledby="nomeProfissao-label"><g:fieldValue bean="${camaraInstance}" field="nomeProfissao"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${camaraInstance?.condicao}">
+				<li class="fieldcontain">
+					<span id="condicao-label" class="property-label"><g:message code="camara.condicao.label" default="Condicao" /></span>
+					
+						<span class="property-value" aria-labelledby="condicao-label"><g:fieldValue bean="${camaraInstance}" field="condicao"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${camaraInstance?.email}">
+				<li class="fieldcontain">
+					<span id="email-label" class="property-label"><g:message code="camara.email.label" default="Email" /></span>
+					
+						<span class="property-value" aria-labelledby="email-label"><g:fieldValue bean="${camaraInstance}" field="email"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${camaraInstance?.fone}">
+				<li class="fieldcontain">
+					<span id="fone-label" class="property-label"><g:message code="camara.fone.label" default="Fone" /></span>
+					
+						<span class="property-value" aria-labelledby="fone-label"><g:fieldValue bean="${camaraInstance}" field="fone"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${camaraInstance?.matricula}">
+				<li class="fieldcontain">
+					<span id="matricula-label" class="property-label"><g:message code="camara.matricula.label" default="Matricula" /></span>
+					
+						<span class="property-value" aria-labelledby="matricula-label"><g:fieldValue bean="${camaraInstance}" field="matricula"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${camaraInstance?.partido}">
+				<li class="fieldcontain">
+					<span id="partido-label" class="property-label"><g:message code="camara.partido.label" default="Partido" /></span>
+					
+						<span class="property-value" aria-labelledby="partido-label"><g:fieldValue bean="${camaraInstance}" field="partido"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${camaraInstance?.ufRepresentacaoAtual}">
+				<li class="fieldcontain">
+					<span id="ufRepresentacaoAtual-label" class="property-label"><g:message code="camara.ufRepresentacaoAtual.label" default="Uf Representacao Atual" /></span>
+					
+						<span class="property-value" aria-labelledby="ufRepresentacaoAtual-label"><g:fieldValue bean="${camaraInstance}" field="ufRepresentacaoAtual"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${camaraInstance?.urlFoto}">
+				<li class="fieldcontain">
+					<span id="urlFoto-label" class="property-label"><g:message code="camara.urlFoto.label" default="Url Foto" /></span>
+					
+						<span class="property-value" aria-labelledby="urlFoto-label"><g:fieldValue bean="${camaraInstance}" field="urlFoto"/></span>
 					
 				</li>
 				</g:if>

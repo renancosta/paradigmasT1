@@ -32,6 +32,8 @@
 					
 						<g:sortableColumn property="nomeParlamentarAtual" title="${message(code: 'camara.nomeParlamentarAtual.label', default: 'Nome Parlamentar Atual')}" />
 					
+						<g:sortableColumn property="ide" title="${message(code: 'camara.ide.label', default: 'Ide')}" />
+					
 						<g:sortableColumn property="numLegislatura" title="${message(code: 'camara.numLegislatura.label', default: 'Num Legislatura')}" />
 					
 						<g:sortableColumn property="dataNascimento" title="${message(code: 'camara.dataNascimento.label', default: 'Data Nascimento')}" />
@@ -47,6 +49,8 @@
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
 						<td><g:link action="show" id="${camaraInstance.id}">${fieldValue(bean: camaraInstance, field: "nomeParlamentarAtual")}</g:link></td>
+					
+						<td>${fieldValue(bean: camaraInstance, field: "ide")}</td>
 					
 						<td>${fieldValue(bean: camaraInstance, field: "numLegislatura")}</td>
 					

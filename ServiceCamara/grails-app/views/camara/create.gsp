@@ -7,37 +7,33 @@
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
 	</head>
 	<body>
-	<g:form action="save" method="post" >
-  <div class="dialog">
-    <table>
-      <tbody> 
-		<tr class="prop">
-          <td valign="top" class="name"><label for="id">Id:</label></td>
-          <td valign="top" 
-              class="value ${hasErrors(bean:camara,field:'id','errors')}">
-              <input type="text" 
-                     maxlength="5" 
-                     id="id" 
-                     name="id" 
-                     value="${fieldValue(bean:camara,field:'id')}"/>
-          </td>
-        </tr> 
-        <tr class="prop">
-          <td valign="top" class="name"><label for="numLegislatura">Num Legislatura:</label></td>
-          <td valign="top" 
-              class="value ${hasErrors(bean:camara,field:'numLegislatura','errors')}">
-              <input type="text" 
-                     id="numLegislatura" 
-                     name="numLegislatura" 
-                     value="${fieldValue(bean:camara,field:'numLegislatura')}"/>
-          </td>
-        </tr>
-         </tbody>
-    </table>
-  </div>
-  <div class="buttons">
-    <span class="button"><input class="save" type="submit" value="Create" /></span>
-  </div>
-</g:form>
+		<a href="#create-camara" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+		<div class="nav" role="navigation">
+			<ul>
+				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+			</ul>
+		</div>
+		<div id="create-camara" class="content scaffold-create" role="main">
+			<h1><g:message code="default.create.label" args="[entityName]" /></h1>
+			<g:if test="${flash.message}">
+			<div class="message" role="status">${flash.message}</div>
+			</g:if>
+			<g:hasErrors bean="${camaraInstance}">
+			<ul class="errors" role="alert">
+				<g:eachError bean="${camaraInstance}" var="error">
+				<li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
+				</g:eachError>
+			</ul>
+			</g:hasErrors>
+			<g:form action="save" >
+				<fieldset class="form">
+					<g:render template="form"/>
+				</fieldset>
+				<fieldset class="buttons">
+					<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+				</fieldset>
+			</g:form>
+		</div>
 	</body>
 </html>

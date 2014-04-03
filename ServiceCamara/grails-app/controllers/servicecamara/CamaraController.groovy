@@ -3,15 +3,15 @@ package servicecamara
 import org.springframework.dao.DataIntegrityViolationException
 
 import grails.plugin.springsecurity.annotation.Secured
- 
+
 @Secured(['IS_AUTHENTICATED_FULLY'])
 class CamaraController {
+
+    static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
     def springSecurityService
     
     def camaraService = new Camara()
-
-    static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
     def index() {
         redirect(action: "list", params: params)
@@ -48,7 +48,16 @@ class CamaraController {
         }
     }
 
-    def scaffold = camaraService
+    /*def save() {
+        def camaraInstance = new Camara(params)
+        if (!camaraInstance.save(flush: true)) {
+            render(view: "create", model: [camaraInstance: camaraInstance])
+            return
+        }
 
-    
+        flash.message = message(code: 'default.created.message', args: [message(code: 'camara.label', default: 'Camara'), camaraInstance.id])
+        redirect(action: "show", id: camaraInstance.id)
+    }*/
+
+    def scaffold = camaraService
 }

@@ -3,7 +3,7 @@ package servicecamara
 class DeputadoDetalhe {
 
 	String nomeParlamentarAtual
- 	String id
+ 	String ide
  	String numLegislatura
  	String nomeProfissao
  	String dataNascimento
@@ -23,6 +23,6 @@ class DeputadoDetalhe {
     }
 
    	String toString(){
-    	"${id} - ${nomeParlamentarAtual}"
+    	"${ide} - ${nomeParlamentarAtual}"
   	}
 }
