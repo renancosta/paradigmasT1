@@ -30,15 +30,15 @@
 				<thead>
 					<tr>
 					
-						<g:sortableColumn property="ide" title="${message(code: 'camara.ide.label', default: 'Ide')}" />
+						<g:sortableColumn property="ide" title="${message(code: 'camara.ide.label', default: 'ID')}" />
 					
-						<g:sortableColumn property="nomeParlamentarAtual" title="${message(code: 'camara.nomeParlamentarAtual.label', default: 'Nome Parlamentar Atual')}" />
+						<g:sortableColumn property="nomeParlamentarAtual" title="${message(code: 'camara.nomeParlamentarAtual.label', default: 'Nome Parlamentar')}" />
 					
 						<g:sortableColumn property="nomeCivil" title="${message(code: 'camara.nomeCivil.label', default: 'Nome Civil')}" />
 					
 						<g:sortableColumn property="partido" title="${message(code: 'camara.partido.label', default: 'Partido')}" />
 					
-						<g:sortableColumn property="ufRepresentacaoAtual" title="${message(code: 'camara.ufRepresentacaoAtual.label', default: 'Uf Representacao Atual')}" />
+						<g:sortableColumn property="ufRepresentacaoAtual" title="${message(code: 'camara.ufRepresentacaoAtual.label', default: 'UF')}" />
 					
 						<g:sortableColumn property="condicao" title="${message(code: 'camara.condicao.label', default: 'Condicao')}" />
 					

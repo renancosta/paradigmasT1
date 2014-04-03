@@ -13,19 +13,44 @@
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
 				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+				<%--<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>--%>
+				<g:if test="${camaraInstance.favorito == true}">
+					<li><g:link class="favorito" action="favorito" id="${camaraInstance.id}"><g:message code="Favorito OK"/></g:link></li>
+				</g:if>
+				<g:else>
+    				<li><g:link class="favorito" action="favorito" id="${camaraInstance.id}"><g:message code="Favorito"/></g:link></li>
+				</g:else>
+				<%--<g:checkBox name="check" value="${camaraInstance.favorito}"/>--%>
+
 			</ul>
 		</div>
 		<div id="show-camara" class="content scaffold-show" role="main">
-			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
+			<h1><g:message code="Deputado" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<ol class="property-list camara">
 			
+				
+			<table>
+			<tr>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+					<%--<span id="urlFoto-label" class="property-label"><g:message code="camara.urlFoto.label" default="Url Foto" /></span>
+						<span class="property-value" aria-labelledby="urlFoto-label"><g:fieldValue bean="${camaraInstance}" field="urlFoto"/></span>--%>
+						<g:img uri="${camaraInstance.urlFoto}"/>
+			</td>
+			<td width=80%>			
+			<ol class="property-list camara">		
+				
+
 				<g:if test="${camaraInstance?.ide}">
 				<li class="fieldcontain">
-					<span id="ide-label" class="property-label"><g:message code="camara.ide.label" default="Ide" /></span>
+					<span id="ide-label" class="property-label"><g:message code="camara.ide.label" default="ID" /></span>
 					
 						<span class="property-value" aria-labelledby="ide-label"><g:fieldValue bean="${camaraInstance}" field="ide"/></span>
 					
@@ -34,7 +59,7 @@
 			
 				<g:if test="${camaraInstance?.nomeParlamentarAtual}">
 				<li class="fieldcontain">
-					<span id="nomeParlamentarAtual-label" class="property-label"><g:message code="camara.nomeParlamentarAtual.label" default="Nome Parlamentar Atual" /></span>
+					<span id="nomeParlamentarAtual-label" class="property-label"><g:message code="camara.nomeParlamentarAtual.label" default="Nome Parlamentar" /></span>
 					
 						<span class="property-value" aria-labelledby="nomeParlamentarAtual-label"><g:fieldValue bean="${camaraInstance}" field="nomeParlamentarAtual"/></span>
 					
@@ -61,7 +86,7 @@
 			
 				<g:if test="${camaraInstance?.ufRepresentacaoAtual}">
 				<li class="fieldcontain">
-					<span id="ufRepresentacaoAtual-label" class="property-label"><g:message code="camara.ufRepresentacaoAtual.label" default="Uf Representacao Atual" /></span>
+					<span id="ufRepresentacaoAtual-label" class="property-label"><g:message code="camara.ufRepresentacaoAtual.label" default="UF" /></span>
 					
 						<span class="property-value" aria-labelledby="ufRepresentacaoAtual-label"><g:fieldValue bean="${camaraInstance}" field="ufRepresentacaoAtual"/></span>
 					
@@ -70,7 +95,7 @@
 			
 				<g:if test="${camaraInstance?.condicao}">
 				<li class="fieldcontain">
-					<span id="condicao-label" class="property-label"><g:message code="camara.condicao.label" default="Condicao" /></span>
+					<span id="condicao-label" class="property-label"><g:message code="camara.condicao.label" default="Condição" /></span>
 					
 						<span class="property-value" aria-labelledby="condicao-label"><g:fieldValue bean="${camaraInstance}" field="condicao"/></span>
 					
@@ -115,7 +140,7 @@
 			
 				<g:if test="${camaraInstance?.nomeProfissao}">
 				<li class="fieldcontain">
-					<span id="nomeProfissao-label" class="property-label"><g:message code="camara.nomeProfissao.label" default="Nome Profissao" /></span>
+					<span id="nomeProfissao-label" class="property-label"><g:message code="camara.nomeProfissao.label" default="Nome Profissão" /></span>
 					
 						<span class="property-value" aria-labelledby="nomeProfissao-label"><g:fieldValue bean="${camaraInstance}" field="nomeProfissao"/></span>
 					
@@ -131,20 +156,14 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${camaraInstance?.urlFoto}">
-				<li class="fieldcontain">
-					<span id="urlFoto-label" class="property-label"><g:message code="camara.urlFoto.label" default="Url Foto" /></span>
-					
-						<span class="property-value" aria-labelledby="urlFoto-label"><g:fieldValue bean="${camaraInstance}" field="urlFoto"/></span>
-					
-				</li>
-				</g:if>
-			
 			</ol>
+			</td>
+			</tr>
+			</table>
 			<g:form>
 				<fieldset class="buttons">
 					<g:hiddenField name="id" value="${camaraInstance?.id}" />
-					<g:link class="edit" action="edit" id="${camaraInstance?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
+					<%--<g:link class="edit" action="edit" id="${camaraInstance?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>--%>
 					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 				</fieldset>
 			</g:form>

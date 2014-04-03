@@ -53,6 +53,7 @@ class BootStrap {
                 camara.urlFoto = deputados.deputado[i].urlFoto as String
                 camara.email = deputados.deputado[i].email as String
                 camara.fone = deputados.deputado[i].fone as String
+                camara.favorito = false
         		
                 result = new Camara(camara)
                 

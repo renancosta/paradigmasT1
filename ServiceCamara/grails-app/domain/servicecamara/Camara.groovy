@@ -16,6 +16,7 @@ class Camara {
   String urlFoto
   String email
   String fone
+  boolean favorito
 
     static constraints = {
     	ide(maxSize:5)
