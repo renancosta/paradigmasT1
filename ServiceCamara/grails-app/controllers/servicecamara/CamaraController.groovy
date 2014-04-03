@@ -26,7 +26,7 @@ class CamaraController {
         [camaraInstance: new Camara(params)]
     }
 
-    def save() {
+    /*def save() {
         def results = camaraService.camaraDeputado(params.id,params.numLegislatura)    
         def camara = new Camara(params + results)
         if(!camara.hasErrors() && camara.save()) {
@@ -36,7 +36,7 @@ class CamaraController {
         else {
             render(view:'create',model:[camara:camara])
         }
-    }
+    }*/
 
     def search= {
         def query =params.q

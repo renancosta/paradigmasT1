@@ -4,7 +4,6 @@ class CamaraService {
 
     boolean transactional = false
 
-    // http://ws.geonames.org/search?name_equals=den&fcode=airp&style=full
     def camaraDeputado(String id, String numL) {
       def base = "http://www.camara.gov.br/SitCamaraWS/Deputados.asmx/ObterDetalhesDeputado?"
       def qs = []
