@@ -55,7 +55,6 @@ class BootStrap {
                 camara.fone = deputados.deputado[i].fone as String
         		
                 result = new Camara(camara)
-                printf(result.nomeParlamentarAtual)
                 
         		if(!result.hasErrors() && result.save()) {
         		}

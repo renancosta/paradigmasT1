@@ -23,15 +23,6 @@
 			</g:if>
 			<ol class="property-list camara">
 			
-				<g:if test="${camaraInstance?.nomeParlamentarAtual}">
-				<li class="fieldcontain">
-					<span id="nomeParlamentarAtual-label" class="property-label"><g:message code="camara.nomeParlamentarAtual.label" default="Nome Parlamentar Atual" /></span>
-					
-						<span class="property-value" aria-labelledby="nomeParlamentarAtual-label"><g:fieldValue bean="${camaraInstance}" field="nomeParlamentarAtual"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${camaraInstance?.ide}">
 				<li class="fieldcontain">
 					<span id="ide-label" class="property-label"><g:message code="camara.ide.label" default="Ide" /></span>
@@ -41,20 +32,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${camaraInstance?.numLegislatura}">
+				<g:if test="${camaraInstance?.nomeParlamentarAtual}">
 				<li class="fieldcontain">
-					<span id="numLegislatura-label" class="property-label"><g:message code="camara.numLegislatura.label" default="Num Legislatura" /></span>
+					<span id="nomeParlamentarAtual-label" class="property-label"><g:message code="camara.nomeParlamentarAtual.label" default="Nome Parlamentar Atual" /></span>
 					
-						<span class="property-value" aria-labelledby="numLegislatura-label"><g:fieldValue bean="${camaraInstance}" field="numLegislatura"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${camaraInstance?.dataNascimento}">
-				<li class="fieldcontain">
-					<span id="dataNascimento-label" class="property-label"><g:message code="camara.dataNascimento.label" default="Data Nascimento" /></span>
-					
-						<span class="property-value" aria-labelledby="dataNascimento-label"><g:fieldValue bean="${camaraInstance}" field="dataNascimento"/></span>
+						<span class="property-value" aria-labelledby="nomeParlamentarAtual-label"><g:fieldValue bean="${camaraInstance}" field="nomeParlamentarAtual"/></span>
 					
 				</li>
 				</g:if>
@@ -68,11 +50,20 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${camaraInstance?.nomeProfissao}">
+				<g:if test="${camaraInstance?.partido}">
 				<li class="fieldcontain">
-					<span id="nomeProfissao-label" class="property-label"><g:message code="camara.nomeProfissao.label" default="Nome Profissao" /></span>
+					<span id="partido-label" class="property-label"><g:message code="camara.partido.label" default="Partido" /></span>
 					
-						<span class="property-value" aria-labelledby="nomeProfissao-label"><g:fieldValue bean="${camaraInstance}" field="nomeProfissao"/></span>
+						<span class="property-value" aria-labelledby="partido-label"><g:fieldValue bean="${camaraInstance}" field="partido"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${camaraInstance?.ufRepresentacaoAtual}">
+				<li class="fieldcontain">
+					<span id="ufRepresentacaoAtual-label" class="property-label"><g:message code="camara.ufRepresentacaoAtual.label" default="Uf Representacao Atual" /></span>
+					
+						<span class="property-value" aria-labelledby="ufRepresentacaoAtual-label"><g:fieldValue bean="${camaraInstance}" field="ufRepresentacaoAtual"/></span>
 					
 				</li>
 				</g:if>
@@ -82,6 +73,15 @@
 					<span id="condicao-label" class="property-label"><g:message code="camara.condicao.label" default="Condicao" /></span>
 					
 						<span class="property-value" aria-labelledby="condicao-label"><g:fieldValue bean="${camaraInstance}" field="condicao"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${camaraInstance?.dataNascimento}">
+				<li class="fieldcontain">
+					<span id="dataNascimento-label" class="property-label"><g:message code="camara.dataNascimento.label" default="Data Nascimento" /></span>
+					
+						<span class="property-value" aria-labelledby="dataNascimento-label"><g:fieldValue bean="${camaraInstance}" field="dataNascimento"/></span>
 					
 				</li>
 				</g:if>
@@ -113,20 +113,20 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${camaraInstance?.partido}">
+				<g:if test="${camaraInstance?.nomeProfissao}">
 				<li class="fieldcontain">
-					<span id="partido-label" class="property-label"><g:message code="camara.partido.label" default="Partido" /></span>
+					<span id="nomeProfissao-label" class="property-label"><g:message code="camara.nomeProfissao.label" default="Nome Profissao" /></span>
 					
-						<span class="property-value" aria-labelledby="partido-label"><g:fieldValue bean="${camaraInstance}" field="partido"/></span>
+						<span class="property-value" aria-labelledby="nomeProfissao-label"><g:fieldValue bean="${camaraInstance}" field="nomeProfissao"/></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${camaraInstance?.ufRepresentacaoAtual}">
+				<g:if test="${camaraInstance?.numLegislatura}">
 				<li class="fieldcontain">
-					<span id="ufRepresentacaoAtual-label" class="property-label"><g:message code="camara.ufRepresentacaoAtual.label" default="Uf Representacao Atual" /></span>
+					<span id="numLegislatura-label" class="property-label"><g:message code="camara.numLegislatura.label" default="Num Legislatura" /></span>
 					
-						<span class="property-value" aria-labelledby="ufRepresentacaoAtual-label"><g:fieldValue bean="${camaraInstance}" field="ufRepresentacaoAtual"/></span>
+						<span class="property-value" aria-labelledby="numLegislatura-label"><g:fieldValue bean="${camaraInstance}" field="numLegislatura"/></span>
 					
 				</li>
 				</g:if>

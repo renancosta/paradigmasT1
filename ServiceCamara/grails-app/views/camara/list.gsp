@@ -30,17 +30,17 @@
 				<thead>
 					<tr>
 					
-						<g:sortableColumn property="nomeParlamentarAtual" title="${message(code: 'camara.nomeParlamentarAtual.label', default: 'Nome Parlamentar Atual')}" />
-					
 						<g:sortableColumn property="ide" title="${message(code: 'camara.ide.label', default: 'Ide')}" />
 					
-						<g:sortableColumn property="numLegislatura" title="${message(code: 'camara.numLegislatura.label', default: 'Num Legislatura')}" />
-					
-						<g:sortableColumn property="dataNascimento" title="${message(code: 'camara.dataNascimento.label', default: 'Data Nascimento')}" />
+						<g:sortableColumn property="nomeParlamentarAtual" title="${message(code: 'camara.nomeParlamentarAtual.label', default: 'Nome Parlamentar Atual')}" />
 					
 						<g:sortableColumn property="nomeCivil" title="${message(code: 'camara.nomeCivil.label', default: 'Nome Civil')}" />
 					
-						<g:sortableColumn property="nomeProfissao" title="${message(code: 'camara.nomeProfissao.label', default: 'Nome Profissao')}" />
+						<g:sortableColumn property="partido" title="${message(code: 'camara.partido.label', default: 'Partido')}" />
+					
+						<g:sortableColumn property="ufRepresentacaoAtual" title="${message(code: 'camara.ufRepresentacaoAtual.label', default: 'Uf Representacao Atual')}" />
+					
+						<g:sortableColumn property="condicao" title="${message(code: 'camara.condicao.label', default: 'Condicao')}" />
 					
 					</tr>
 				</thead>
@@ -48,17 +48,17 @@
 				<g:each in="${camaraInstanceList}" status="i" var="camaraInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${camaraInstance.id}">${fieldValue(bean: camaraInstance, field: "nomeParlamentarAtual")}</g:link></td>
+						<td><g:link action="show" id="${camaraInstance.id}">${fieldValue(bean: camaraInstance, field: "ide")}</g:link></td>
 					
-						<td>${fieldValue(bean: camaraInstance, field: "ide")}</td>
-					
-						<td>${fieldValue(bean: camaraInstance, field: "numLegislatura")}</td>
-					
-						<td>${fieldValue(bean: camaraInstance, field: "dataNascimento")}</td>
+						<td>${fieldValue(bean: camaraInstance, field: "nomeParlamentarAtual")}</td>
 					
 						<td>${fieldValue(bean: camaraInstance, field: "nomeCivil")}</td>
 					
-						<td>${fieldValue(bean: camaraInstance, field: "nomeProfissao")}</td>
+						<td>${fieldValue(bean: camaraInstance, field: "partido")}</td>
+					
+						<td>${fieldValue(bean: camaraInstance, field: "ufRepresentacaoAtual")}</td>
+					
+						<td>${fieldValue(bean: camaraInstance, field: "condicao")}</td>
 					
 					</tr>
 				</g:each>

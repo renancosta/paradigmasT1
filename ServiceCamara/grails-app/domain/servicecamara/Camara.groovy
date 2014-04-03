@@ -18,12 +18,11 @@ class Camara {
   String fone
 
     static constraints = {
-    	nomeParlamentarAtual()
     	ide(maxSize:5)
-    	numLegislatura()
-    	dataNascimento()
+      nomeParlamentarAtual()
     	nomeCivil()
-    	nomeProfissao()
+    	partido()
+    	ufRepresentacaoAtual()
     }
 
    	String toString(){
