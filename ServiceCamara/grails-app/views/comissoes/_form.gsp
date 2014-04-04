@@ -42,3 +42,11 @@
 	<g:textField name="dataSaida" value="${comissoesInstance?.dataSaida}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: comissoesInstance, field: 'dep', 'error')} required">
+	<label for="dep">
+		<g:message code="comissoes.dep.label" default="Dep" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="dep" name="dep.id" from="${servicecamara.DeputadoDetalhe.list()}" optionKey="id" required="" value="${comissoesInstance?.dep?.id}" class="many-to-one"/>
+</div>
+

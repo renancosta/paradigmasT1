@@ -34,6 +34,8 @@
 					
 						<g:sortableColumn property="dataSaida" title="${message(code: 'comissoes.dataSaida.label', default: 'Data Saida')}" />
 					
+						<th><g:message code="comissoes.dep.label" default="Dep" /></th>
+					
 					</tr>
 				</thead>
 				<tbody>
@@ -49,6 +51,8 @@
 						<td>${fieldValue(bean: comissoesInstance, field: "dataEntrada")}</td>
 					
 						<td>${fieldValue(bean: comissoesInstance, field: "dataSaida")}</td>
+					
+						<td>${fieldValue(bean: comissoesInstance, field: "dep")}</td>
 					
 					</tr>
 				</g:each>

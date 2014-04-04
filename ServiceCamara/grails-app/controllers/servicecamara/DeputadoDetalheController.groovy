@@ -54,19 +54,21 @@ class DeputadoDetalheController {
         if(connection.responseCode == 200){
             def xml = connection.content.text
             def Deputados = new XmlSlurper().parseText(xml)
-            def allComicoes = Deputados.Deputado.comissao
+            def allComicoes = Deputados.Deputado.comissoes.comissao
 
             deputadoDetalheInstance.deputado.numLegislatura = Deputados.Deputado.numLegislatura as String 
             deputadoDetalheInstance.deputado.nomeProfissao = Deputados.Deputado.nomeProfissao as String
             deputadoDetalheInstance.deputado.dataNascimento = Deputados.Deputado.dataNascimento as String
-            
+            //printf(allComicoes.size())
             while(i<allComicoes.size()) {
-                deputadoDetalheInstance.comissoes.siglaComissao = Deputados.Deputado.comissao[i].siglaComissao as String
-                deputadoDetalheInstance.comissoes.nomeComissao = Deputados.Deputado.comissao[i].nomeComissao as String
-                deputadoDetalheInstance.comissoes.condicaoMembro = Deputados.Deputado.comissao[i].condicaoMembro as String
-                deputadoDetalheInstance.comissoes.dataEntrada = Deputados.Deputado.comissao[i].dataEntrada as String
-                deputadoDetalheInstance.comissoes.dataSaida = Deputados.Deputado.comissao[i].dataSaida as String
-                deputadoDetalheInstance.comissao.save()
+                deputadoDetalheInstance.comissoes.siglaComissao = Deputados.Deputado.comissoes.comissao[i].siglaComissao as String
+                deputadoDetalheInstance.comissoes.nomeComissao = Deputados.Deputado.comissoes.comissao[i].nomeComissao as String
+                deputadoDetalheInstance.comissoes.condicaoMembro = Deputados.Deputado.comissoes.comissao[i].condicaoMembro as String
+                deputadoDetalheInstance.comissoes.dataEntrada = Deputados.Deputado.comissoes.comissao[i].dataEntrada as String
+                deputadoDetalheInstance.comissoes.dataSaida = Deputados.Deputado.comissoes.comissao[i].dataSaida as String
+                printf(deputadoDetalheInstance.comissoes.siglaComissao)
+                deputadoDetalheInstance.comissoes.save()
+                i++
             }
 
             //deputadoDetalheInstance.comissoes = comissoes

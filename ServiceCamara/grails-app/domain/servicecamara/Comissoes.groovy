@@ -16,4 +16,9 @@ class Comissoes {
     	dataEntrada()
     	dataSaida()
     }
+
+    String toString(){
+    	"${id} - ${nomeComissao}"
+  	}
+
 }

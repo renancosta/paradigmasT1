@@ -68,6 +68,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${comissoesInstance?.dep}">
+				<li class="fieldcontain">
+					<span id="dep-label" class="property-label"><g:message code="comissoes.dep.label" default="Dep" /></span>
+					
+						<span class="property-value" aria-labelledby="dep-label"><g:link controller="deputadoDetalhe" action="show" id="${comissoesInstance?.dep?.id}">${comissoesInstance?.dep?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form>
 				<fieldset class="buttons">

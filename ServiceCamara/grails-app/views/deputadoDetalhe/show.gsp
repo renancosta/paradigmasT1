@@ -162,6 +162,23 @@
 			</td>
 			</tr>
 			</table>
+			<g:each in="${deputadoDetalheInstance?.comissoes}" status="i" var="comissoesInstance">
+					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+					
+						<td><g:link action="show" id="${comissoesInstance.id}">${fieldValue(bean: comissoesInstance, field: "siglaComissao")}</g:link></td>
+					
+						<td>${fieldValue(bean: comissoesInstance, field: "nomeComissao")}</td>
+					
+						<td>${fieldValue(bean: comissoesInstance, field: "condicaoMembro")}</td>
+					
+						<td>${fieldValue(bean: comissoesInstance, field: "dataEntrada")}</td>
+					
+						<td>${fieldValue(bean: comissoesInstance, field: "dataSaida")}</td>
+					
+					
+					</tr>
+				</g:each>
+			
 			<g:form>
 				<fieldset class="buttons">
 					<g:hiddenField name="id" value="${deputadoDetalheInstance?.id}" />
