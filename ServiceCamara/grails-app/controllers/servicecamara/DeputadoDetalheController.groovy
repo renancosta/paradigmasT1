@@ -48,14 +48,29 @@ class DeputadoDetalheController {
         qs << "numLegislatura=" + URLEncoder.encode("53")
         def url = new URL(base + qs.join("&"))
         def connection = url.openConnection()
-
+        def i=0
+        def comissoes = new Comissoes()
         //def result = [:]
         if(connection.responseCode == 200){
             def xml = connection.content.text
             def Deputados = new XmlSlurper().parseText(xml)
+            def allComicoes = Deputados.Deputado.comissao
+
             deputadoDetalheInstance.deputado.numLegislatura = Deputados.Deputado.numLegislatura as String 
             deputadoDetalheInstance.deputado.nomeProfissao = Deputados.Deputado.nomeProfissao as String
             deputadoDetalheInstance.deputado.dataNascimento = Deputados.Deputado.dataNascimento as String
+            
+            while(i<allComicoes.size()) {
+                deputadoDetalheInstance.comissoes.siglaComissao = Deputados.Deputado.comissao[i].siglaComissao as String
+                deputadoDetalheInstance.comissoes.nomeComissao = Deputados.Deputado.comissao[i].nomeComissao as String
+                deputadoDetalheInstance.comissoes.condicaoMembro = Deputados.Deputado.comissao[i].condicaoMembro as String
+                deputadoDetalheInstance.comissoes.dataEntrada = Deputados.Deputado.comissao[i].dataEntrada as String
+                deputadoDetalheInstance.comissoes.dataSaida = Deputados.Deputado.comissao[i].dataSaida as String
+                deputadoDetalheInstance.comissao.save()
+            }
+
+            //deputadoDetalheInstance.comissoes = comissoes
+            
             //log.info("URL: $url")
         
         }

@@ -31,12 +31,27 @@ class CamaraController {
         //printf(params.id)
 
         def camaraInstance2 = Camara.get(params.id.toInteger())
+        //def comissoes = new Comissoes()
+        //comissoes = Comissoes.get(params.id.toInteger())
+
+
+
         DeputadoDetalhe deputados = new DeputadoDetalhe()
+        deputados.comissoes = new Comissoes()
+        deputados.comissoes.dep = deputados
+
+        deputados.comissoes.siglaComissao= ""
+        deputados.comissoes.nomeComissao = ""
+        deputados.comissoes.condicaoMembro = ""
+        deputados.comissoes.dataEntrada = ""
+        deputados.comissoes.dataSaida = ""
+
         //DeputadoDetalheController depC = new DeputadoDetalheController()
         //print(camaraInstance2.favorito);
         if(camaraInstance2.favorito==false){
             camaraInstance2.favorito = true
             deputados.deputado = camaraInstance2
+            //deputados.comissoes = comissoes
             deputados.save()
         }else{
             camaraInstance2.favorito = false
