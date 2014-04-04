@@ -26,17 +26,24 @@ class CamaraController {
     }
 
     def favorito(){
-        printf("nhe")
+        //printf("nhe")
         
         //printf(params.id)
 
         def camaraInstance2 = Camara.get(params.id.toInteger())
-
+        DeputadoDetalhe deputados = new DeputadoDetalhe()
+        //DeputadoDetalheController depC = new DeputadoDetalheController()
         //print(camaraInstance2.favorito);
         if(camaraInstance2.favorito==false){
             camaraInstance2.favorito = true
+            deputados.deputado = camaraInstance2
+            deputados.save()
         }else{
             camaraInstance2.favorito = false
+            //deputados.delete(camaraInstance2.ide)
+            //depC.params.cam = camaraInstance2.ide
+            //depC.apagar()
+            //depC.save()
         }
 
         redirect(action:"show", params:params)

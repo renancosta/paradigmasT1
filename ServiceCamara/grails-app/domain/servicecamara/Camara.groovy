@@ -17,6 +17,7 @@ class Camara {
   String email
   String fone
   boolean favorito
+  //static belongsTo = [depsD: DeputadoDetalhe]
 
     static constraints = {
     	ide(maxSize:5)

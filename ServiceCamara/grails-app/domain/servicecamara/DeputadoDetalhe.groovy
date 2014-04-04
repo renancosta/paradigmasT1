@@ -2,14 +2,12 @@ package servicecamara
 
 class DeputadoDetalhe {
 
-	//def listaDeputados
+	Camara deputado
 
     static constraints = {
-    	//ide(maxSize:5)
-        //nomeParlamentarAtual()
-        //nomeCivil()
-        //partido()
-        //ufRepresentacaoAtual()
+        
+    	deputado()
+
     }
 
    	String toString(){
